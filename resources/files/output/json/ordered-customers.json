@@ -1,0 +1,740 @@
+[
+  {
+    "Id": 29,
+    "Name": "Louann Holzworth",
+    "BirthDate": "Oct 1, 1960 2:00:00 AM",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "id": 69,
+        "car": {},
+        "discountPercentage": 0.0
+      },
+      {
+        "id": 79,
+        "car": {},
+        "discountPercentage": 20.0
+      }
+    ]
+  },
+  {
+    "Id": 28,
+    "Name": "Donnetta Soliz",
+    "BirthDate": "Oct 1, 1963 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 61,
+        "car": {},
+        "discountPercentage": 5.0
+      },
+      {
+        "id": 67,
+        "car": {},
+        "discountPercentage": 15.0
+      },
+      {
+        "id": 92,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 31,
+        "car": {},
+        "discountPercentage": 5.0
+      },
+      {
+        "id": 11,
+        "car": {},
+        "discountPercentage": 15.0
+      }
+    ]
+  },
+  {
+    "Id": 17,
+    "Name": "Rema Revelle",
+    "BirthDate": "May 1, 1970 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 45,
+        "car": {},
+        "discountPercentage": 5.0
+      },
+      {
+        "id": 20,
+        "car": {},
+        "discountPercentage": 5.0
+      }
+    ]
+  },
+  {
+    "Id": 16,
+    "Name": "Carri Knapik",
+    "BirthDate": "Feb 2, 1972 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": []
+  },
+  {
+    "Id": 27,
+    "Name": "Garret Capron",
+    "BirthDate": "Jul 1, 1975 2:00:00 AM",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "id": 27,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 14,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 1,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 34,
+        "car": {},
+        "discountPercentage": 0.0
+      },
+      {
+        "id": 46,
+        "car": {},
+        "discountPercentage": 5.0
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "Name": "Teddy Hobby",
+    "BirthDate": "Oct 1, 1975 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 23,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 72,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 66,
+        "car": {},
+        "discountPercentage": 5.0
+      }
+    ]
+  },
+  {
+    "Id": 10,
+    "Name": "Audrea Cardinal",
+    "BirthDate": "Oct 1, 1976 2:00:00 AM",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "id": 51,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 43,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 82,
+        "car": {},
+        "discountPercentage": 30.0
+      }
+    ]
+  },
+  {
+    "Id": 11,
+    "Name": "Francis Mckim",
+    "BirthDate": "Oct 1, 1977 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 56,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 74,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 98,
+        "car": {},
+        "discountPercentage": 15.0
+      },
+      {
+        "id": 81,
+        "car": {},
+        "discountPercentage": 15.0
+      }
+    ]
+  },
+  {
+    "Id": 14,
+    "Name": "Brett Brickley",
+    "BirthDate": "Oct 1, 1980 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 76,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 5,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 78,
+        "car": {},
+        "discountPercentage": 40.0
+      }
+    ]
+  },
+  {
+    "Id": 15,
+    "Name": "Kristian Engberg",
+    "BirthDate": "Oct 3, 1981 2:00:00 AM",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "id": 44,
+        "car": {},
+        "discountPercentage": 0.0
+      },
+      {
+        "id": 71,
+        "car": {},
+        "discountPercentage": 30.0
+      }
+    ]
+  },
+  {
+    "Id": 26,
+    "Name": "Hipolito Lamoreaux",
+    "BirthDate": "Aug 1, 1982 3:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 26,
+        "car": {},
+        "discountPercentage": 5.0
+      },
+      {
+        "id": 85,
+        "car": {},
+        "discountPercentage": 5.0
+      },
+      {
+        "id": 94,
+        "car": {},
+        "discountPercentage": 15.0
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Zada Attwood",
+    "BirthDate": "Oct 1, 1982 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 30,
+        "car": {},
+        "discountPercentage": 15.0
+      },
+      {
+        "id": 2,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 32,
+        "car": {},
+        "discountPercentage": 0.0
+      },
+      {
+        "id": 48,
+        "car": {},
+        "discountPercentage": 40.0
+      }
+    ]
+  },
+  {
+    "Id": 25,
+    "Name": "Sylvie Mcelravy",
+    "BirthDate": "Oct 1, 1983 2:00:00 AM",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "id": 88,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 52,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 47,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 24,
+        "car": {},
+        "discountPercentage": 5.0
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "Name": "Rico Peer",
+    "BirthDate": "Oct 1, 1984 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 86,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 16,
+        "car": {},
+        "discountPercentage": 0.0
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Name": "Hai Everton",
+    "BirthDate": "Oct 1, 1985 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 63,
+        "car": {},
+        "discountPercentage": 5.0
+      },
+      {
+        "id": 97,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 41,
+        "car": {},
+        "discountPercentage": 30.0
+      },
+      {
+        "id": 75,
+        "car": {},
+        "discountPercentage": 5.0
+      },
+      {
+        "id": 99,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 10,
+        "car": {},
+        "discountPercentage": 20.0
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "Name": "Lino Subia",
+    "BirthDate": "Dec 21, 1985 2:00:00 AM",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "id": 40,
+        "car": {},
+        "discountPercentage": 30.0
+      },
+      {
+        "id": 68,
+        "car": {},
+        "discountPercentage": 5.0
+      },
+      {
+        "id": 80,
+        "car": {},
+        "discountPercentage": 5.0
+      }
+    ]
+  },
+  {
+    "Id": 24,
+    "Name": "Jimmy Grossi",
+    "BirthDate": "Jul 1, 1986 3:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 35,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 60,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 96,
+        "car": {},
+        "discountPercentage": 5.0
+      },
+      {
+        "id": 90,
+        "car": {},
+        "discountPercentage": 15.0
+      }
+    ]
+  },
+  {
+    "Id": 12,
+    "Name": "Carole Witman",
+    "BirthDate": "Oct 1, 1987 2:00:00 AM",
+    "IsYoungDriver": false,
+    "Sales": []
+  },
+  {
+    "Id": 13,
+    "Name": "Oren Perlman",
+    "BirthDate": "Oct 1, 1988 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 100,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 73,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 87,
+        "car": {},
+        "discountPercentage": 30.0
+      },
+      {
+        "id": 4,
+        "car": {},
+        "discountPercentage": 30.0
+      },
+      {
+        "id": 42,
+        "car": {},
+        "discountPercentage": 30.0
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Natalie Poli",
+    "BirthDate": "Oct 4, 1990 2:00:00 AM",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "id": 50,
+        "car": {},
+        "discountPercentage": 15.0
+      },
+      {
+        "id": 53,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 15,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 93,
+        "car": {},
+        "discountPercentage": 30.0
+      },
+      {
+        "id": 91,
+        "car": {},
+        "discountPercentage": 40.0
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Marcelle Griego",
+    "BirthDate": "Oct 4, 1990 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 7,
+        "car": {},
+        "discountPercentage": 15.0
+      },
+      {
+        "id": 70,
+        "car": {},
+        "discountPercentage": 0.0
+      }
+    ]
+  },
+  {
+    "Id": 19,
+    "Name": "Yvonne Mccalla",
+    "BirthDate": "Mar 2, 1992 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 65,
+        "car": {},
+        "discountPercentage": 30.0
+      },
+      {
+        "id": 84,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 59,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 95,
+        "car": {},
+        "discountPercentage": 5.0
+      },
+      {
+        "id": 39,
+        "car": {},
+        "discountPercentage": 20.0
+      }
+    ]
+  },
+  {
+    "Id": 30,
+    "Name": "Ann Mcenaney",
+    "BirthDate": "Mar 2, 1992 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 49,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 13,
+        "car": {},
+        "discountPercentage": 15.0
+      }
+    ]
+  },
+  {
+    "Id": 21,
+    "Name": "Cinthia Lasala",
+    "BirthDate": "Nov 1, 1992 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 57,
+        "car": {},
+        "discountPercentage": 20.0
+      }
+    ]
+  },
+  {
+    "Id": 1,
+    "Name": "Emmitt Benally",
+    "BirthDate": "Nov 20, 1993 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 25,
+        "car": {},
+        "discountPercentage": 0.0
+      },
+      {
+        "id": 6,
+        "car": {},
+        "discountPercentage": 0.0
+      },
+      {
+        "id": 12,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 17,
+        "car": {},
+        "discountPercentage": 20.0
+      }
+    ]
+  },
+  {
+    "Id": 20,
+    "Name": "Nisha Markwell",
+    "BirthDate": "Apr 4, 1994 3:00:00 AM",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "id": 37,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 77,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 64,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 58,
+        "car": {},
+        "discountPercentage": 0.0
+      },
+      {
+        "id": 28,
+        "car": {},
+        "discountPercentage": 20.0
+      }
+    ]
+  },
+  {
+    "Id": 23,
+    "Name": "Faustina Burgher",
+    "BirthDate": "Jun 1, 1994 3:00:00 AM",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "id": 29,
+        "car": {},
+        "discountPercentage": 5.0
+      },
+      {
+        "id": 89,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 54,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 21,
+        "car": {},
+        "discountPercentage": 30.0
+      },
+      {
+        "id": 38,
+        "car": {},
+        "discountPercentage": 0.0
+      },
+      {
+        "id": 83,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 36,
+        "car": {},
+        "discountPercentage": 0.0
+      }
+    ]
+  },
+  {
+    "Id": 18,
+    "Name": "Taina Achenbach",
+    "BirthDate": "Oct 1, 1994 2:00:00 AM",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "id": 19,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 55,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 62,
+        "car": {},
+        "discountPercentage": 5.0
+      },
+      {
+        "id": 3,
+        "car": {},
+        "discountPercentage": 40.0
+      }
+    ]
+  },
+  {
+    "Id": 9,
+    "Name": "Johnette Derryberry",
+    "BirthDate": "Oct 1, 1995 2:00:00 AM",
+    "IsYoungDriver": true,
+    "Sales": [
+      {
+        "id": 8,
+        "car": {},
+        "discountPercentage": 40.0
+      }
+    ]
+  },
+  {
+    "Id": 22,
+    "Name": "Daniele Zarate",
+    "BirthDate": "Oct 5, 1995 2:00:00 AM",
+    "IsYoungDriver": false,
+    "Sales": [
+      {
+        "id": 33,
+        "car": {},
+        "discountPercentage": 40.0
+      },
+      {
+        "id": 22,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 18,
+        "car": {},
+        "discountPercentage": 20.0
+      },
+      {
+        "id": 9,
+        "car": {},
+        "discountPercentage": 5.0
+      }
+    ]
+  }
+]
