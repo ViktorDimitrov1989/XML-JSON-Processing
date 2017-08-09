@@ -1,28 +1,35 @@
 package app.dto.views;
 
-import app.models.Sale;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "customer")
 public class OrderedCustomer implements Serializable {
     @Expose
     @SerializedName("Id")
+    @XmlElement(name = "id")
     private Long id;
     @Expose
     @SerializedName("Name")
+    @XmlElement(name = "name")
     private String name;
     @Expose
     @SerializedName("BirthDate")
+    @XmlElement(name = "birth-date")
     private Date birthDate;
     @Expose
     @SerializedName("IsYoungDriver")
+    @XmlElement(name = "is-youn-driver")
     private boolean isYoungDriver;
     @Expose
     @SerializedName("Sales")
+    @XmlTransient
     private Set<OrderedSale> sales;
 
     public OrderedCustomer() {

@@ -2,12 +2,22 @@ package app.dto.add;
 
 import com.google.gson.annotations.Expose;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "part")
 public class AddPartDto {
     @Expose
+    @XmlAttribute(name = "name")
     private String name;
     @Expose
+    @XmlAttribute(name = "price")
     private double price;
     @Expose
+    @XmlAttribute(name = "quantity")
     private int quantity;
     @Expose
     private PartSupplierDto supplier;

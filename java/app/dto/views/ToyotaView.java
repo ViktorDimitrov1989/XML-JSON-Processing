@@ -3,18 +3,29 @@ package app.dto.views;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "car")
 public class ToyotaView {
     @Expose
     @SerializedName("Id")
+    @XmlAttribute(name = "id")
     private Long id;
     @Expose
     @SerializedName("Make")
+    @XmlAttribute(name = "make")
     private String make;
     @Expose
     @SerializedName("Model")
+    @XmlAttribute(name = "model")
     private String model;
     @Expose
     @SerializedName("TravelledDistance")
+    @XmlAttribute(name = "travelled-distance")
     private Long travelledDistance;
 
     public ToyotaView() {

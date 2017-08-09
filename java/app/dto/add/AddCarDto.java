@@ -1,16 +1,21 @@
 package app.dto.add;
 
-import app.models.Part;
 import com.google.gson.annotations.Expose;
 
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "car")
 public class AddCarDto {
     @Expose
+    @XmlElement(name = "make")
     private String make;
     @Expose
+    @XmlElement(name = "model")
     private String model;
     @Expose
+    @XmlElement(name = "travelled-distance")
     private Long travelledDistance;
     @Expose
     private List<PartDto> parts;

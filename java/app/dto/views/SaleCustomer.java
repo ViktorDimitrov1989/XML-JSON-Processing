@@ -3,15 +3,21 @@ package app.dto.views;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "customer")
 public class SaleCustomer implements Serializable {
     @Expose
     @SerializedName("fullName")
+    @XmlAttribute(name = "full-name")
     private String name;
     @Expose
+    @XmlAttribute(name = "bought-cars")
     private int boughtCars;
     @Expose
+    @XmlAttribute(name = "spent-money")
     private double spentMoney;
 
     public SaleCustomer() {

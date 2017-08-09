@@ -4,19 +4,26 @@ import app.models.Part;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.List;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "car")
 public class CarWithDiscount implements Serializable{
     @Expose
     @SerializedName("Make")
+    @XmlAttribute(name = "make")
     private String make;
     @Expose
     @SerializedName("Model")
+    @XmlAttribute(name = "model")
     private String model;
     @Expose
     @SerializedName("TravelledDistance")
+    @XmlAttribute(name = "travelled-distance")
     private Long travelledDistance;
+    @XmlTransient
     private List<Part> parts;
 
     public CarWithDiscount() {

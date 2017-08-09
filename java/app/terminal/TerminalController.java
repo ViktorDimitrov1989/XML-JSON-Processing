@@ -2,9 +2,11 @@ package app.terminal;
 
 import app.dto.add.*;
 import app.dto.views.*;
+import app.dto.wrapers.*;
 import app.services.*;
 import app.utils.Constants;
 import app.utils.JsonSerializer;
+import app.utils.XmlSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -25,6 +27,7 @@ public class TerminalController implements CommandLineRunner {
 
     //utils
     private JsonSerializer jsonSerializer;
+    private XmlSerializer xmlSerializer;
 
 
     @Autowired
@@ -33,13 +36,15 @@ public class TerminalController implements CommandLineRunner {
                               CarService carService,
                               CustomerService customerService,
                               SalesService salesService,
-                              JsonSerializer jsonSerializer) {
+                              JsonSerializer jsonSerializer,
+                              XmlSerializer xmlSerializer) {
         this.partSupplierService = partSupplierService;
         this.partsService = partsService;
         this.carService = carService;
         this.customerService = customerService;
         this.salesService = salesService;
         this.jsonSerializer = jsonSerializer;
+        this.xmlSerializer = xmlSerializer;
     }
 
     @Override
@@ -65,8 +70,11 @@ public class TerminalController implements CommandLineRunner {
         List<SaleWithDiscount> sales =
                this.salesService.getSalesWithAppliedDiscount();
 
-        this.jsonSerializer.serialize(sales,
-                Constants.OUTPUT_JSON_FILES_PATH + Constants.OUTPUT_JSON_SALES_DISCOUNTS_FILE);
+        SalesWithDiscountWrapper salesWrapper = new SalesWithDiscountWrapper();
+        salesWrapper.setSales(sales);
+
+        this.xmlSerializer.serialize(salesWrapper,
+                Constants.OUTPUT_XML_FILES_PATH + Constants.OUTPUT_XML_SALES_DISCOUNTS_FILE);
 
     }
 
@@ -85,19 +93,24 @@ public class TerminalController implements CommandLineRunner {
             return res;
         }).collect(Collectors.toList());
 
+        SaleCustomerWrapper customerWrapper = new SaleCustomerWrapper();
+        customerWrapper.setCustomers(customers);
 
-        this.jsonSerializer.serialize(customers,
-                Constants.OUTPUT_JSON_FILES_PATH + Constants.OUTPUT_JSON_SALES_BY_CUSTOMER_FILE);
+        this.xmlSerializer.serialize(customerWrapper,
+                Constants.OUTPUT_XML_FILES_PATH + Constants.OUTPUT_XML_SALES_BY_CUSTOMER_FILE);
 
     }
 
     private void exportAllCarsWithParts() {
         List<CarView> cars = this.carService.findAllWithParts();
 
+        CarWithPartsWrapper carsWrapper = new CarWithPartsWrapper();
+        carsWrapper.setCars(cars);
+
         String debug = "";
 
-        this.jsonSerializer.serialize(cars,
-                Constants.OUTPUT_JSON_FILES_PATH + Constants.OUTPUT_JSON_CARS_AND_PARTS_FILE);
+        this.xmlSerializer.serialize(carsWrapper,
+                Constants.OUTPUT_XML_FILES_PATH + Constants.OUTPUT_XML_CARS_AND_PARTS_FILE);
 
     }
 
@@ -108,27 +121,31 @@ public class TerminalController implements CommandLineRunner {
             supplier.setPartsCount(supplier.getParts().size());
         }
 
-        String debug = "";
+        LocalSupplierWrapper supplierWrapper = new LocalSupplierWrapper();
+        supplierWrapper.setSuppliers(suppliers);
 
-        this.jsonSerializer.serialize(suppliers,
-                Constants.OUTPUT_JSON_FILES_PATH + Constants.OUTPUT_JSON_LOCAL_SUPPLIERS_FILE);
-
+        this.xmlSerializer.serialize(supplierWrapper,
+                Constants.OUTPUT_XML_FILES_PATH + Constants.OUTPUT_XML_LOCAL_SUPPLIERS_FILE);
     }
 
     private void findAllToyotas() {
         List<ToyotaView> toyotas = this.carService.getAllToyotas();
 
-        this.jsonSerializer.serialize(toyotas,
-                Constants.OUTPUT_JSON_FILES_PATH + Constants.OUTPUT_JSON_TOYOTA_CARS_FILE);
+        ToyotaWrapper cars = new ToyotaWrapper();
+        cars.setCars(toyotas);
+
+        this.xmlSerializer.serialize(cars,
+                Constants.OUTPUT_XML_FILES_PATH + Constants.OUTPUT_XML_TOYOTA_CARS_FILE);
     }
 
     private void orderedCustomers() {
         List<OrderedCustomer> customers = this.customerService.findAllByOrderByBirthDateAsc();
 
-        String debug = "";
+        OrderedCustomersWrapper customersWrapper = new OrderedCustomersWrapper();
+        customersWrapper.setCustomers(customers);
 
-        this.jsonSerializer.serialize(customers,
-                Constants.OUTPUT_JSON_FILES_PATH + Constants.OUTPUT_JSON_ORDERED_CUSTOMERS_FILE);
+        this.xmlSerializer.serialize(customersWrapper,
+                Constants.OUTPUT_XML_FILES_PATH + Constants.OUTPUT_XML_ORDERED_CUSTOMERS_FILE);
     }
 
     private void importData() {
@@ -157,10 +174,10 @@ public class TerminalController implements CommandLineRunner {
     }
 
     private void importCustomers() {
-        AddCustomerDto[] customers = this.jsonSerializer.deserialize(AddCustomerDto[].class,
-                Constants.INPUT_JSON_FILES_PATH + Constants.INPUT_JSON_CUSTOMERS_FILE);
+        AddCustomerWrapper customersWrapper = this.xmlSerializer.deserialize(AddCustomerWrapper.class,
+                Constants.INPUT_XML_FILES_PATH + Constants.INPUT_XML_CUSTOMERS_FILE);
 
-        for (AddCustomerDto customer : customers) {
+        for (AddCustomerDto customer : customersWrapper.getCustomers()) {
             this.customerService.saveCutomer(customer);
         }
     }
@@ -170,12 +187,12 @@ public class TerminalController implements CommandLineRunner {
 
         String debug = "";
 
-        AddCarDto[] cars = this.jsonSerializer.deserialize(AddCarDto[].class,
-                Constants.INPUT_JSON_FILES_PATH + Constants.INPUT_JSON_CARS_FILE);
+        AddCarsWrapper addCarsWrapper = this.xmlSerializer.deserialize(AddCarsWrapper.class,
+                Constants.INPUT_XML_FILES_PATH + Constants.INPUT_XML_CARS_FILE);
 
         Random random = new Random();
         List<PartDto> randomParts = new ArrayList<>();
-        for (AddCarDto car : cars) {
+        for (AddCarDto car : addCarsWrapper.getCars()) {
 
             int endIndex = random.nextInt(20);
             for (int i = 10; i < endIndex; i++) {
@@ -192,21 +209,21 @@ public class TerminalController implements CommandLineRunner {
     private void importParts() {
         List<PartSupplierDto> suppliers = this.partSupplierService.findAllSuppliers();
 
-        AddPartDto[] parts = this.jsonSerializer.deserialize(AddPartDto[].class,
-                Constants.INPUT_JSON_FILES_PATH + Constants.INPUT_JSON_PARTS_FILE);
+        AddPartsWrapper partsWrapper = this.xmlSerializer.deserialize(AddPartsWrapper.class,
+                Constants.INPUT_XML_FILES_PATH + Constants.INPUT_XML_PARTS_FILE);
 
         Random rnd = new Random();
-        for (AddPartDto part : parts) {
+        for (AddPartDto part : partsWrapper.getParts()) {
             part.setSupplier(suppliers.get(rnd.nextInt(suppliers.size())));
             this.partsService.savePart(part);
         }
     }
 
     private void importSuppliers() {
-        AddPartSupplierDto[] partSuppliers = this.jsonSerializer.deserialize(AddPartSupplierDto[].class,
-                Constants.INPUT_JSON_FILES_PATH + Constants.INPUT_JSON_SUPPLIERS_FILE);
+        AddSuppliersWrapper suppliers = this.xmlSerializer.deserialize(AddSuppliersWrapper.class,
+            Constants.INPUT_XML_FILES_PATH + Constants.INPUT_XML_SUPPLIERS_FILE);
 
-        for (AddPartSupplierDto partSupplier : partSuppliers) {
+        for (AddPartSupplierDto partSupplier : suppliers.getSuppliers()) {
             this.partSupplierService.savePartSupplier(partSupplier);
         }
     }

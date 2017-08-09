@@ -38,16 +38,17 @@ public class SaleServiceImpl implements SalesService{
 
         List<SaleWithDiscount> resSales = DtoMappingUtil.convert(sales, SaleWithDiscount.class);
 
+
+        String debug = "";
+
         for (int i = 0; i < resSales.size(); i++) {
             SaleWithDiscount sale = resSales.get(i);
             Sale originalSale = sales.get(i);
 
-            String debug = "";
+            double price = originalSale.getCar().getParts().stream().mapToDouble(Part::getPrice).sum();
+            sale.setCustomerPrice(price);
 
-            double price = sale.getCar().getParts().stream().mapToDouble(Part::getPrice).sum();
-            sale.getCustomer().setPrice(price);
-
-            double discountPercentage = sale.getDiscountPercentage();
+            double discountPercentage = originalSale.getDiscountPercentage();
 
             long timeDiff = Math.abs(sale.getCustomer().getBirthDate().getTime() - new Date().getTime());
             double years = Math.floor(TimeUnit.MILLISECONDS.toDays(timeDiff) / 365);
@@ -55,32 +56,13 @@ public class SaleServiceImpl implements SalesService{
             if(years <= 20){
                 discountPercentage += 0.5;
             }
-            sale.getCustomer().setDiscountPercentage(discountPercentage);
+            sale.setCustomerDiscountPercentage(discountPercentage);
             double priceWithDiscount = price - (price * discountPercentage);
 
-            sale.getCustomer().setPriceWithDiscount(priceWithDiscount);
+            sale.setCustomerPriceWithDiscount(priceWithDiscount);
         }
 
-
-       /* for (SaleWithDiscount sale : resSales) {
-            double price = sale.getCar().getParts().stream().mapToDouble(Part::getPrice).sum();
-            sale.getCustomer().setPrice(price);
-
-            double discountPercentage = sale.getDiscountPercentage();
-
-            long timeDiff = Math.abs(sale.getCustomer().getBirthDate().getTime() - new Date().getTime());
-            double years = Math.floor(TimeUnit.MILLISECONDS.toDays(timeDiff) / 365);
-
-            if(years <= 2){
-                discountPercentage += 0.5;
-            }
-            sale.getCustomer().setDiscountPercentage(discountPercentage);
-            double priceWithDiscount = price - (price * discountPercentage);
-
-            sale.getCustomer().setPriceWithDiscount(priceWithDiscount);
-        }*/
-
-        String debug = "";
+        String debu1g = "";
 
         return resSales;
     }

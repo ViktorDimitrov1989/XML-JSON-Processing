@@ -1,5 +1,6 @@
 package app.utils;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.xml.bind.JAXBContext;
@@ -10,6 +11,14 @@ import java.io.*;
 
 @Component(value = "XmlSerializer")
 public class XmlSerializer implements Serializer {
+
+    private FileIO fileIo;
+
+    @Autowired
+    public XmlSerializer(FileIO fileIo) {
+        this.fileIo = fileIo;
+    }
+
     @Override
     public <T> void serialize(T obj, String fileName) {
         try {
@@ -40,6 +49,7 @@ public class XmlSerializer implements Serializer {
     }
 
     @Override
+    @SuppressWarnings(value = "unchecked")
     public <T> T deserialize(Class<T> clazz, String fileName) {
 
         try{
@@ -48,7 +58,23 @@ public class XmlSerializer implements Serializer {
 
             try(InputStream is = clazz.getResourceAsStream(fileName);
                 BufferedReader reader = new BufferedReader(new InputStreamReader(is))){
-                T t = (T)unmarshaller.unmarshal(reader);
+
+                //escape bad characters//
+                StringBuilder sb = new StringBuilder();
+                String line = "";
+                while ((line = reader.readLine()) != null){
+                    sb.append(line).append(System.lineSeparator());
+                }
+                String currentXml = sb.toString();
+                currentXml = currentXml.trim().replaceFirst("^([\\W]+)<","<");
+                String path = System.getProperty("user.dir") + "/src/main/resources" + fileName;
+
+                this.fileIo.write(currentXml, path);
+                File file = new File(path);
+
+
+                T t = (T)unmarshaller.unmarshal(file);
+
                 return t;
             }
 

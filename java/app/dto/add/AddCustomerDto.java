@@ -2,14 +2,20 @@ package app.dto.add;
 
 import com.google.gson.annotations.Expose;
 
+import javax.xml.bind.annotation.*;
 import java.util.Date;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "customer")
 public class AddCustomerDto {
     @Expose
+    @XmlAttribute(name = "name")
     private String name;
     @Expose
+    @XmlElement(name = "birth-date")
     private Date birthDate;
     @Expose
+    @XmlElement(name = "is-young-driver")
     private boolean isYoungDriver;
 
     public AddCustomerDto() {
